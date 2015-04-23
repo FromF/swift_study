@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         self.Label1.text = "Button1が押されました"
     }
     @IBAction func Segment1(sender: AnyObject) {
-        var segment: UISegmentedControl = sender as UISegmentedControl
+        var segment: UISegmentedControl = sender as! UISegmentedControl
         self.Label1.text = "セグメントが\(segment.selectedSegmentIndex)に切り替わりました"
     }
 }
