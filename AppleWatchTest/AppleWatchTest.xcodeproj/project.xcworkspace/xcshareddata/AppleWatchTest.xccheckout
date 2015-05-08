@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>40C77147-821E-481E-85D6-94F9BD03B5F9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>AppleWatchTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5699C80F3D2B14C9574FBD40BC06AF63EF571CD5</key>
 		<string>https://github.com/FromF/swift_study.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AppleWatchTest/AppleWatchTest.xcodeproj/project.xcworkspace</string>
+	<string>AppleWatchTest/AppleWatchTest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5699C80F3D2B14C9574FBD40BC06AF63EF571CD5</key>

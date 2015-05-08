@@ -10,8 +10,12 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController , OLYCameraLiveViewDelegate {
 
+    let camera : OLYCamera = OLYCamera()
+    var liveviewCount : NSInteger = 0
+    @IBOutlet weak var liveViewImage: WKInterfaceImage!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -21,11 +25,35 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        var result : Bool = true
+        
+        if ((result) && (!camera.connected)) {
+            result = camera.connect(OLYCameraConnectionTypeWiFi, error: nil)
+        }
+        if ((result) && (camera.connected)) {
+            camera.liveViewDelegate = self
+            result = camera.changeRunMode(OLYCameraRunModeRecording, error: nil)
+        }
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        var result : Bool = true
+        if ((result) && (camera.connected)) {
+            result = camera.disconnectWithPowerOff(false, error: nil)
+        }
     }
 
+    func camera(camera: OLYCamera!, didUpdateLiveView data: NSData!, metadata: [NSObject : AnyObject]!) {
+        NSLog("count %d",liveviewCount)
+        if (liveviewCount == 0) {
+            var image : UIImage = OLYCameraConvertDataToImage(data,metadata)
+            liveViewImage.setImage(image)
+        }
+        liveviewCount++;
+        if (liveviewCount > 60) {
+            liveviewCount = 0;
+        }
+    }
 }

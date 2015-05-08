@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D6AF6201AFCFF51000FC031 /* OLYCameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6AF61F1AFCFF51000FC031 /* OLYCameraKit.framework */; };
+		9D6AF6281AFD002C000FC031 /* OLYCameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6AF61F1AFCFF51000FC031 /* OLYCameraKit.framework */; };
 		9DEBB5981AF45B3300B4C4A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEBB5971AF45B3300B4C4A9 /* AppDelegate.swift */; };
 		9DEBB59A1AF45B3300B4C4A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEBB5991AF45B3300B4C4A9 /* ViewController.swift */; };
 		9DEBB59D1AF45B3300B4C4A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DEBB59B1AF45B3300B4C4A9 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9D6AF61F1AFCFF51000FC031 /* OLYCameraKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OLYCameraKit.framework; sourceTree = "<group>"; };
+		9D6AF6241AFCFF8C000FC031 /* AppleWatchTest WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppleWatchTest WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		9DEBB5921AF45B3300B4C4A9 /* AppleWatchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DEBB5961AF45B3300B4C4A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DEBB5971AF45B3300B4C4A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6AF6201AFCFF51000FC031 /* OLYCameraKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,15 +104,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6AF6281AFD002C000FC031 /* OLYCameraKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D6AF6221AFCFF59000FC031 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				9D6AF61F1AFCFF51000FC031 /* OLYCameraKit.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 		9DEBB5891AF45B3300B4C4A9 = {
 			isa = PBXGroup;
 			children = (
+				9D6AF6221AFCFF59000FC031 /* Framework */,
 				9DEBB5941AF45B3300B4C4A9 /* AppleWatchTest */,
 				9DEBB5AA1AF45B3300B4C4A9 /* AppleWatchTestTests */,
 				9DEBB5BC1AF45B4300B4C4A9 /* AppleWatchTest WatchKit Extension */,
@@ -168,6 +183,7 @@
 		9DEBB5BC1AF45B4300B4C4A9 /* AppleWatchTest WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9D6AF6241AFCFF8C000FC031 /* AppleWatchTest WatchKit Extension-Bridging-Header.h */,
 				9DEBB5BF1AF45B4300B4C4A9 /* InterfaceController.swift */,
 				9DEBB5C11AF45B4300B4C4A9 /* Images.xcassets */,
 				9DEBB5BD1AF45B4300B4C4A9 /* Supporting Files */,
@@ -518,9 +534,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AppleWatchTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleWatchTest WatchKit Extension/AppleWatchTest WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -528,9 +552,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AppleWatchTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleWatchTest WatchKit Extension/AppleWatchTest WatchKit Extension-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -541,6 +572,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -560,6 +592,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = AppleWatchTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -603,24 +636,39 @@
 		9DEBB5D81AF45B4400B4C4A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "AppleWatchTest WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleWatchTest WatchKit Extension/AppleWatchTest WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		9DEBB5D91AF45B4400B4C4A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "AppleWatchTest WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleWatchTest WatchKit Extension/AppleWatchTest WatchKit Extension-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -643,6 +691,7 @@
 				9DEBB5B31AF45B3300B4C4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DEBB5B41AF45B3300B4C4A9 /* Build configuration list for PBXNativeTarget "AppleWatchTestTests" */ = {
 			isa = XCConfigurationList;
@@ -651,6 +700,7 @@
 				9DEBB5B61AF45B3300B4C4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DEBB5D41AF45B4400B4C4A9 /* Build configuration list for PBXNativeTarget "AppleWatchTest WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -659,6 +709,7 @@
 				9DEBB5D61AF45B4400B4C4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DEBB5D71AF45B4400B4C4A9 /* Build configuration list for PBXNativeTarget "AppleWatchTest WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -667,6 +718,7 @@
 				9DEBB5D91AF45B4400B4C4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
