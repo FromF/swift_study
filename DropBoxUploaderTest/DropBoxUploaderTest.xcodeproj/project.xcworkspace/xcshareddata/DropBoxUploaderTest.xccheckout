@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>50F4167B-623B-4134-82AA-527C16FF2F3D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DropBoxUploaderTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5699C80F3D2B14C9574FBD40BC06AF63EF571CD5</key>
+		<string>https://github.com/FromF/swift_study.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DropBoxUploaderTest/DropBoxUploaderTest.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5699C80F3D2B14C9574FBD40BC06AF63EF571CD5</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/FromF/swift_study.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5699C80F3D2B14C9574FBD40BC06AF63EF571CD5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5699C80F3D2B14C9574FBD40BC06AF63EF571CD5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>swift_study</string>
+		</dict>
+	</array>
+</dict>
+</plist>
