@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="AppleWatchTest_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <imageView width="136" height="151" alignment="left" id="YTh-wI-dI0"/>
+                        <imageView width="136" height="151" alignment="left" contentMode="scaleAspectFit" id="YTh-wI-dI0"/>
                     </items>
                     <connections>
                         <outlet property="liveViewImage" destination="YTh-wI-dI0" id="Odg-xW-Wof"/>

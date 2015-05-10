@@ -49,7 +49,10 @@ class InterfaceController: WKInterfaceController , OLYCameraLiveViewDelegate {
         NSLog("count %d",liveviewCount)
         if (liveviewCount == 0) {
             var image : UIImage = OLYCameraConvertDataToImage(data,metadata)
-            liveViewImage.setImage(image)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.liveViewImage.setImage(image)
+                return
+            }
         }
         liveviewCount++;
         if (liveviewCount > 60) {
