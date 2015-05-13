@@ -25,14 +25,17 @@ class InterfaceController: WKInterfaceController , OLYCameraLiveViewDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        var result : Bool = true
-        
-        if ((result) && (!camera.connected)) {
-            result = camera.connect(OLYCameraConnectionTypeWiFi, error: nil)
-        }
-        if ((result) && (camera.connected)) {
-            camera.liveViewDelegate = self
-            result = camera.changeRunMode(OLYCameraRunModeRecording, error: nil)
+        liveViewImage.setImage(nil)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            var result : Bool = true
+            
+            if ((result) && (!self.camera.connected)) {
+                result = self.camera.connect(OLYCameraConnectionTypeWiFi, error: nil)
+            }
+            if ((result) && (self.camera.connected)) {
+                self.camera.liveViewDelegate = self
+                result = self.camera.changeRunMode(OLYCameraRunModeRecording, error: nil)
+            }
         }
     }
 
@@ -42,6 +45,7 @@ class InterfaceController: WKInterfaceController , OLYCameraLiveViewDelegate {
         var result : Bool = true
         if ((result) && (camera.connected)) {
             result = camera.disconnectWithPowerOff(false, error: nil)
+            liveViewImage.setImage(nil)
         }
     }
 
@@ -55,12 +59,20 @@ class InterfaceController: WKInterfaceController , OLYCameraLiveViewDelegate {
         if (liveviewCount == 0) {
             var image : UIImage = OLYCameraConvertDataToImage(data,metadata)
             dispatch_async(dispatch_get_main_queue()) {
-                self.liveViewImage.setImage(image)
+                //リサイズする
+                var size = CGSizeMake((image.size.width * 0.2),(image.size.height * 0.2))
+                UIGraphicsBeginImageContext(size)
+                image.drawInRect(CGRectMake(0, 0, size.width, size.height))
+                let image_reized : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                
+                //
+                self.liveViewImage.setImage(image_reized)
                 return
             }
         }
         liveviewCount++;
-        if (liveviewCount > 60) {
+        if (liveviewCount > 15) {
             liveviewCount = 0;
         }
     }
