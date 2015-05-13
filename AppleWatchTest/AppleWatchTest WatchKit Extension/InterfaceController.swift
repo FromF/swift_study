@@ -45,6 +45,11 @@ class InterfaceController: WKInterfaceController , OLYCameraLiveViewDelegate {
         }
     }
 
+    @IBAction func shutter() {
+        if (camera.connected) {
+            camera.takePicture(nil, progressHandler: nil, completionHandler: nil, errorHandler: nil)
+        }
+    }
     func camera(camera: OLYCamera!, didUpdateLiveView data: NSData!, metadata: [NSObject : AnyObject]!) {
         NSLog("count %d",liveviewCount)
         if (liveviewCount == 0) {
